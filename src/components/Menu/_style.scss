@@ -1,0 +1,89 @@
+.menu{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;  // 会不会自动变行
+    padding-left: 0;
+    margin-bottom: 30px;
+    list-style: none;
+    border-bottom: $menu-border-width solid $menu-border-color;
+    box-shadow: $menu-box-shadow;
+    .menu-item{
+        position: relative;
+        padding: $menu-item-padding-y $menu-item-padding-x;
+        cursor: pointer;
+        transition: $menu-transition;
+        &:hover,&:focus{
+            text-decoration: none;
+        }
+        &.is-disabled{
+            color:$menu-item-disabled-color;
+            pointer-events: none;
+            cursor: default;
+        }
+        &.is-active,
+        &:hover{
+            color:$menu-item-active-color;
+            border-bottom: $menu-item-active-color $menu-item-active-border-width solid;
+        }
+    }
+}
+
+.menu-vertical{
+    flex-direction: column;
+    border-bottom: 0px;
+    border-right: $menu-border-width solid $menu-border-color;
+    .menu-item{
+        border-left: transparent $menu-item-active-border-width solid;
+        &.is-active,&:hover{
+            border-bottom: 0px;
+            border-left: $menu-item-active-color $menu-item-active-border-width solid;
+        }
+    }
+}
+.menu-horizontal{
+.submenu-item{
+    position: relative;
+    .submenu-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .down-icon{
+            margin-left: 3px;
+        }
+        &:hover{
+            transition: all 2s;
+            .down-icon{
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+}
+
+.down-icon{
+   margin-left: 3px;
+}
+.is-vitical.menu-open{
+    .down-icon{
+        transition: 2s all;
+        transform: rotate(180deg);
+    }
+}
+
+.submenu{
+    position: absolute;
+    list-style: none;
+    box-shadow: 0px 0px 15px #eee;
+    padding: 0;
+    top: 45px;
+    // margin-left: -34px;
+    display: none;
+    left: 5px;
+    color:$body-color;
+    background: #fff;
+    z-index: 1;
+}
+
+.menu-open{
+    display: block;
+}

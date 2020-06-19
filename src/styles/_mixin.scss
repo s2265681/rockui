@@ -1,0 +1,67 @@
+@mixin button-size($padding-x,$padding-y,$font-size,$border-radius){
+    padding:$padding-x $padding-y;
+    font-size: $font-size;
+    border-radius: $border-radius;
+}
+
+@mixin button-style(
+  $background,
+  $border,
+  $color,
+  $hover-background: lighten($background, 7.5%),
+  $hover-border: lighten($border, 10%),
+  $hover-color: $color,
+) {
+  color: $color;
+  background: $background;
+  border-color: $border;
+  &:hover {
+    color: $hover-color;
+    background: $hover-background;
+    border-color: $hover-border;    
+  }
+  &:focus,
+  &.focus {
+    color: $hover-color;
+    background: $hover-background;
+    border-color: $hover-border;    
+  }
+  &:disabled,
+  &.disabled {
+    color: $color;
+    background: $background;
+    border-color: $border;    
+  }
+}
+
+@mixin alert-style($border-color){
+  border-color: $border-color;
+  background: lighten($border-color, 10%);
+}
+
+@mixin border-right-radius($raduis) {
+  border-top-right-radius: $raduis;
+  border-bottom-right-radius: $raduis;
+}
+
+@mixin border-left-radius($raduis) {
+  border-top-left-radius: $raduis;
+  border-bottom-left-radius: $raduis;
+}
+
+// animate Time修改
+@mixin duration-time($duration-time) {
+   animation-duration: $duration-time;
+   animation-fill-mode:$animation-fill-mode;
+}
+
+@mixin commission-border($border-color) {
+  border-left: $border-color 4px solid;
+}
+
+@mixin dot-radio-color($color) {
+  background-color: $color;
+}
+
+
+

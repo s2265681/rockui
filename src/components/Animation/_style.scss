@@ -1,0 +1,314 @@
+.duration-fast-time{
+    @include duration-time(0.5s);
+}
+.duration-middle-time{
+    @include duration-time(1s);
+}
+.duration-slow-time{
+    @include duration-time(2s);
+}
+
+// 淡入
+.animate-fade--in{
+    animation-name: fadein;
+}
+
+// 淡出
+.animate-fade--out{
+    animation-name: fadeout;
+}
+
+// 左淡入
+.animate-fade-left-in{
+    animation-name: fade-left-in;
+}
+
+// 右淡入
+.animate-fade-right-in{
+    animation-name: fade-right-in;
+}
+
+// 左淡出
+.animate-fade-left-out{
+    animation-name: fade-left-out;
+}
+
+// 右淡出
+.animate-fade-right-out{
+    animation-name: fade-right-out;
+}
+
+
+// 上淡入
+.animate-fade-top-in{
+    animation-name: fade-top-in;
+}
+
+// 下淡入
+.animate-fade-bottom-in{
+    animation-name: fade-bottom-in;
+}
+
+// 上淡出
+.animate-fade-top-out{
+    animation-name: fade-top-out;
+}
+
+// 下淡出
+.animate-fade-bottom-out{
+    animation-name: fade-bottom-out;
+}
+
+
+// 左滑入
+.animate-slip-left-in {
+    animation-name: left-in;
+}
+.animate-slip--in {
+    animation-name: left-in;
+}
+
+// 左滑出
+.animate-slip-left-out{
+    animation-name:left-out;
+}
+
+// 右滑入
+.animate-slip-right-in{
+    animation-name:right-in;
+}
+.animate-slip--out{
+    animation-name:left-out;
+}
+
+
+// 右滑出
+.animate-slip-right-out{
+    animation-name:right-out;
+}
+
+// 上滑入
+.animate-slip-top-in{
+    animation-name:top-in;
+}
+
+// 上滑出
+.animate-slip-top-out{
+    animation-name:top-out;
+}
+
+// 下滑入
+.animate-slip-bottom-in{
+    animation-name:bottom-in;
+}
+
+// 下滑出
+.animate-slip-bottom-out{
+    animation-name:bottom-out;
+}
+
+// 下滑出
+.animate-slip-bottom-out{
+    animation-name: bottom-out;
+}
+
+//  左滑入
+@keyframes left-in{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+//  右滑入
+@keyframes right-in{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+// 左滑出
+@keyframes left-out{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+//  右滑出
+@keyframes right-out{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+
+// 上滑入
+@keyframes top-in{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+//  上滑出
+@keyframes top-out{
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+// 下滑入
+@keyframes bottom-in{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+//  下滑出
+@keyframes bottom-out{
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+
+
+// 淡入
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+// 淡出
+@keyframes fadeout{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+// 左淡入
+@keyframes fade-left-in{
+    0%{
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+// 左淡出
+@keyframes fade-left-out{
+    0%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+}
+
+// 右淡入
+@keyframes fade-right-in{
+    0%{
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// 右淡出
+@keyframes fade-right-out{
+    0%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(10%);
+    }
+}
+
+
+// 上淡入
+@keyframes fade-top-in{
+    0%{
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+// 下淡入
+@keyframes fade-bottom-in{
+    0%{
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+// 上淡出
+@keyframes fade-top-out{
+    0%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+}
+
+// 下淡出
+@keyframes fade-bottom-out{
+    0%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(10%);
+    }
+}

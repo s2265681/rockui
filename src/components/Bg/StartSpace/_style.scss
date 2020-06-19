@@ -1,0 +1,86 @@
+.start_wrapper {
+    position: fixed;
+    background-color: #000;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .turn-down {
+     top: -100vh;
+  }
+
+  .turn-left {
+    left: -100%;
+ }
+
+
+
+ @each $key,$val in(
+  "down":top,
+  "left":left,
+   "up":bottom
+  ){
+  .start_wrapper_comeIn-#{$key} {
+    top: 0;
+    left: 0;
+    transition: $val 3s;
+  }
+}
+
+ 
+
+  @keyframes aniStart {
+    0% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .heart {
+    position: relative;
+  }
+  
+  .heart::before,
+  .heart::after
+  {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #f00;
+    -moz-border-radius: 50% 50% 0 0;
+    border-radius: 50% 50% 0 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -moz-transform-origin: 0 100%;
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin:0 100%;
+    -o-transform-origin:0 100%;
+    -ms-transform-origin:0 100%;
+    transform-origin: 0 100%;
+  }
+  .heart::after{
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin:100% 100%;
+    -o-transform-origin: 100% 100%;
+  }

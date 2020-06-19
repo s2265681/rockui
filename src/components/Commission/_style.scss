@@ -1,0 +1,176 @@
+.commission{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 50px 20px;
+   .info-wrapper{
+       position: relative;
+        width: 100%;
+        // padding: 0px 30px;
+        padding-left: 30px;
+        margin-bottom: 20px;
+        .dot-radio{
+            position: relative;
+            width: 25px;
+            height: 25px;
+            // background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            // top: 0px;
+            left: -14px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-right: 1px;
+            color: #fff;
+            cursor: pointer;
+            .delete-icon{
+                position: absolute;
+                color: #000;
+                top: -12px;
+                right: -12px;
+            }
+          .showBtns{
+            display: none;
+            position: absolute;
+            height: 40px;
+            background: #333;
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 30px;
+            top: 15x;
+            width: 168px;
+            z-index: 111;
+            left: 21px;
+            top: -38px;
+            // display: flex;
+            // align-items: center;
+            // justify-content: space-evenly;
+            .addToBottom{
+                display: flex;
+                flex-direction: column-reverse;
+                padding-top: 8px;
+                .chevron-down{
+                    position: relative;
+                    top: -5px;
+                }
+            }
+            .addToRight{
+                display: flex;
+                .chevron-right{
+                    position: relative;
+                    left: -1px;
+                }
+            }
+          }
+          .showBtns::before{
+            position: absolute;
+            content: '';
+            left: 2px;
+            z-index: 1;
+            top: 29px;
+            transform: rotate(14deg);
+            width: 0px;
+            height: 0px;
+            border-left: #333 solid 15px;
+            border-top: transparent solid 7px;
+            border-right: transparent solid 7px;
+            border-bottom: transparent solid 10px;
+          }
+
+          &:hover{
+            .showBtns{
+                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+          }
+        }
+        .dot-radio::after {
+            content: '';
+            position: absolute;
+            top: -16px;
+            left: -10px;
+            width: 76px;
+            height: 52px;
+            background: transparent;
+            cursor: pointer;
+        }
+        .bottom{
+            position:absolute;
+            bottom: 0px !important;
+            left: -16px !important;
+        }
+        .info{
+            position: relative;
+            top: -5px;
+            min-height: 130px;
+            .title{ 
+                 font-size: 23px;
+            }
+            .content{
+                font-size: 16px;
+            } 
+        }
+   }
+}
+
+.lengLine{
+    position: relative;
+    top: 0px;
+    height: 80px;
+}
+
+.commission-primary{
+    .info-wrapper{
+        .dot-radio{
+            @include dot-radio-color($primary);
+        }
+        @include commission-border($primary);
+        .lengLine{
+            @include commission-border($primary)
+        }
+    }
+    .lengLine{
+        @include commission-border($primary)
+    }
+}
+
+.commission-warning{
+    .info-wrapper{
+        @include commission-border($warning);
+        .dot-radio{
+            @include dot-radio-color($warning)
+        }
+    }
+    .lengLine{
+        @include commission-border($warning)
+    }
+}
+
+.commission-danger{
+    .info-wrapper{
+        @include commission-border($danger);
+        .dot-radio{
+            @include dot-radio-color($danger)
+        }
+    }
+    .lengLine{
+        @include commission-border($danger)
+    }
+}
+
+.commission-info{
+    .info-wrapper{
+        @include commission-border($info);
+        .dot-radio{
+            @include dot-radio-color($info)
+        }
+    }
+    .lengLine{
+        @include commission-border($info)
+    }
+}

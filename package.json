@@ -1,0 +1,97 @@
+{
+  "name": "rockui",
+  "version": "0.4.9",
+  "private": false,
+  "homepage": "https://s2265681.github.io/code/React_Hook_UI/HookWithTypeScript/build/index.html",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "React component library rock",
+  "author": "rockshang",
+  "keywords": [
+    "Component",
+    "UI",
+    "React",
+    "Rock"
+  ],
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s2265681/code/tree/master/React_Hook_UI/rockui"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "classnames": "^2.2.6",
+    "highlight.js": "^10.0.3",
+    "lodash": "^4.17.15",
+    "react-markdown": "^4.3.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "clean": "rimraf ./dist",
+    "lint": "eslint --ext js,ts src --max-warnings 5",
+    "build": "npm run clean && npm run build-ts && npm run build-css",
+    "test": "react-scripts test",
+    "test:nowatch": "cross-env CI=true react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
+    "prepublish": "npm run test:nowatch && npm run lint && npm run build",
+    "scp": "cnpm run build-storybook"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.0",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-info": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/preset-create-react-app": "^2.1.1",
+    "@storybook/react": "^5.3.19",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^24.0.0",
+    "@types/lodash": "^4.14.154",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/storybook__addon-info": "^5.2.1",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "eslint-loader": "^4.0.2",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-docgen": "^5.3.0",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "rimraf": "^3.0.2",
+    "typescript": "~3.7.2"
+  }
+}
