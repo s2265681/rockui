@@ -375,7 +375,7 @@ const handleMouseDown =(e: React.MouseEvent<HTMLTableRowElement, MouseEvent>,ind
          setDragIndex(dragIndex+1)
          setStartPoint(startPoint+lineHeight)
      }else if(offset<-lineHeight&&dragIndex>0){            // 向上交换位置
-      setSourceData(move(_dataSource,dragIndex,dragIndex+1))
+      setSourceData(move(_dataSource,dragIndex-1,dragIndex))
       setDragIndex(dragIndex-1)
       setStartPoint(startPoint-lineHeight)
      }

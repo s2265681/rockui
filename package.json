@@ -1,8 +1,8 @@
 {
   "name": "rockui",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "private": false,
-  "homepage": "https://s2265681.github.io/code/React_Hook_UI/HookWithTypeScript/build/index.html",
+  "homepage": "https://s2265681.github.io/rockui/storybook-static/?path=/story/welcome-page--welcome",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/s2265681/code/tree/master/React_Hook_UI/rockui"
+    "url": "https://github.com/s2265681/rockui"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
