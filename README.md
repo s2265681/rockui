@@ -66,7 +66,7 @@ Dozens of languages supported in `rockui`, see [i18n](https://ant.design/docs/re
 ## 🔗 Links
 
 - [Home page](http://project.rockshang.cn/rockui/)
-- [Components](https://github.com/s2265681/code/blob/master/React_Hook_UI/rockui/src/components/Button)
+- [Components](https://s2265681.github.io/rockui/storybook-static/)
 - [Icon Doc](https://fontawesome.com/icons?d=gallery&c=vehicles)
 
 ## ⌨️ Development
@@ -85,7 +85,7 @@ $ npm start
 $ 修改注释 src/index.tsx 打包组件发布 >>> 页面展示
 ```
 
-Open your browser and visit http://127.0.0.1:8001 , see more at [Development](https://github.com/ant-design/ant-design/wiki/Development).
+Open your browser and visit http://127.0.0.1:8001 , see more at [Development](https://s2265681.github.io/rockui/storybook-static/).
 
 ## 🤝 Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
