@@ -27,3 +27,7 @@ export { default as Table } from './components/Table';
 export { default as Spin } from './components/Spin';
 export { default as Animation } from './components/Animation';
 export { default as Commission } from './components/Commission';
+// 遮照， 交换排序组件， 操作block组件 
+export { default as Mask } from './components/Mask';
+export { default as DragSortCom } from './components/DragSortCom';
+export { default as HandleBlock } from './components/HandleBlock';
