@@ -1,8 +1,11 @@
 {
   "name": "rockui",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "private": false,
   "homepage": "https://s2265681.github.io/rockui/storybook-static/?path=/story/welcome-page--welcome",
+  "bugs": {
+    "url": "https://github.com/s2265681/rockui/issues"
+  },
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -1,0 +1,17 @@
+
+ .mask-li-style{
+    /* 禁止文字被鼠标选中 */
+    -moz-user-select: -moz-none; 
+    -moz-user-select: none; 
+    -o-user-select:none; 
+    -khtml-user-select:none; 
+    -webkit-user-select:none; 
+    -ms-user-select:none; 
+    user-select:none;
+ }
+
+ .mask-li-style.chooseSty{
+    /* 设置选中的样式 */
+    opacity: 0.3;
+    border:1px dashed #999;
+ }

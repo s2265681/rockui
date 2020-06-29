@@ -1,0 +1,52 @@
+
+
+.handle_box_wrapper{
+}
+
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: #ff0;
+  position: absolute;
+   
+}
+
+
+.move-right{
+  cursor: ew-resize;
+  position: absolute;
+  background-color: #eae2e2;
+  height: 100px;
+  top: 0;
+  width: 20px;
+  font-size: 25px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: -20px;
+}
+
+.move-bottom{
+  cursor:ns-resize;
+  position: absolute;
+  background-color: #eae2e2;
+  font-size: 25px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  bottom: -20px;
+}
+
+.move-right-bottom{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  cursor:nwse-resize ;
+  background-color: #eae2e2;
+  color: #fff;
+  bottom: -20px;
+  right: -20px;
+}
