@@ -43,7 +43,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [highlightIndex, setHighlightIndex] = useState(-1);
   const tirrgerSearch = useRef(false)  // 作为一个js对象用, 不用更新组件
-  const comRef = useRef(null)    // 作为获取dom节点使用
+  const comRef = useRef<HTMLDivElement>(null)    // 作为获取dom节点使用
   const debounceValue = useDebounce(inputValue, 500);
   // 点击外面关闭下拉框
   useClickOutside(comRef,()=>{setSuggestions([]);setHighlightIndex(-1)})

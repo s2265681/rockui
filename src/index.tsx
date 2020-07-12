@@ -29,6 +29,7 @@ serviceWorker.unregister();
 // export { default as Animation } from './components/Animation';
 // export { default as Commission } from './components/Commission';
 // export { default as AutoComplete } from './components/AutoComplete';
+// export { default as Upload } from './components/Upload';
 
 
 
