@@ -32,7 +32,7 @@ const SimpleUpload = () => {
     <Upload
           action = "https://jsonplaceholder.typicode.com/posts"
           beforeUpload={filePromise}
-         // action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+        //  action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
          onChange={action('changed')}
       // onRemove={action('removed')}
       // name="fileName"
