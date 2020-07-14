@@ -1,7 +1,9 @@
-import React, { FC, useRef, ChangeEvent, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import axois from "axios";
 import Button from "../Button";
-import UploadList from './uploadList'
+import UploadList from "./uploadList";
+import Dragger from "./dragger";
+
 export type fileStatus = "ready" | "success" | "error" | "uploading";
 
 export interface UploadFile {
@@ -17,13 +19,21 @@ export interface UploadFile {
 
 export interface UploadProps {
   action: string;
-  defaultFileList?:UploadFile[];
+  defaultFileList?: UploadFile[];
   beforeUpload?: (file: File) => boolean | Promise<File>;
   onChange?: (file: File) => void;
   onProgress?: (percentage: number, file: File) => void;
   onSuccess?: (data: any, file: File) => void;
   onError?: (err: any, file: File) => void;
-  onRemove?:(file:UploadFile)=> void
+  onRemove?: (file: UploadFile) => void;
+  headers?: { [key: string]: any };
+  data?: { [key: string]: any };
+  name?: string;
+  withCredentials?: boolean;
+  accept?: string;
+  multiple?: boolean;
+  // children?: any;
+  drag?: boolean;
 }
 
 export const Upload: FC<UploadProps> = (props) => {
@@ -35,11 +45,19 @@ export const Upload: FC<UploadProps> = (props) => {
     onProgress,
     onSuccess,
     onError,
-    onRemove
+    onRemove,
+    headers,
+    data,
+    name,
+    withCredentials,
+    accept,
+    multiple,
+    drag,
+    children,
   } = props;
 
   const fileInput = useRef<HTMLInputElement>(null);
-  const [fileList, setFileList] = useState<UploadFile[]>(defaultFileList||[]);
+  const [fileList, setFileList] = useState<UploadFile[]>(defaultFileList || []);
 
   const updateFileList = (
     updatefile: UploadFile,
@@ -56,13 +74,12 @@ export const Upload: FC<UploadProps> = (props) => {
     });
   };
 
-  const removeFile = (file:UploadFile)=>{
-    setFileList((prevList)=>
-      prevList.filter(item=>item.uid!==file.uid)
-    )
-    if(onRemove)onRemove(file)
-  }
+  const removeFile = (file: UploadFile) => {
+    setFileList((prevList) => prevList.filter((item) => item.uid !== file.uid));
+    if (onRemove) onRemove(file);
+  };
 
+  // input change get file
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files) return;
@@ -70,6 +87,7 @@ export const Upload: FC<UploadProps> = (props) => {
     if (fileInput.current) fileInput.current.value = "";
   };
 
+  // upload file
   const uploadFiles = (files: FileList) => {
     // files 是一个类数组 [...files] | Array.from(files)
     let postFile = Array.from(files);
@@ -87,6 +105,7 @@ export const Upload: FC<UploadProps> = (props) => {
     });
   };
 
+  // upload api
   const post = (file: File) => {
     let _file: UploadFile = {
       uid: Date.now() + "upload-file",
@@ -96,14 +115,25 @@ export const Upload: FC<UploadProps> = (props) => {
       raw: file,
       percent: 0,
     };
-    setFileList([_file, ...fileList]);
+    // 无法获取最新值
+    //setFileList([_file, ...fileList])
+    setFileList((prevList) => {
+      return [_file, ...prevList];
+    });
     const formData = new FormData();
-    formData.append(file.name, file);
+    formData.append(name || "file", file);
+    if (data) {
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+    }
     axois
       .post(action, formData, {
         headers: {
+          ...headers,
           "Content-Type": "multipart/form-data",
         },
+        withCredentials, // 是否携带cooki，默认不携带
         onUploadProgress: (e) => {
           // 计算上传百分比
           let percentage = Math.round((e.loaded * 100) / e.total) || 0;
@@ -131,6 +161,7 @@ export const Upload: FC<UploadProps> = (props) => {
       });
   };
 
+  // click upload btn or else element
   const handleUpload = () => {
     if (fileInput.current) {
       // 点击input
@@ -138,29 +169,41 @@ export const Upload: FC<UploadProps> = (props) => {
     }
   };
 
-  console.log(fileList, "fileList");
-
   return (
     <div className="rock-upload-component">
-      <Button btnType="primary" onClick={handleUpload}>
-        Upload
-      </Button>
-      <input
-        type="file"
-        name="myFile"
-        ref={fileInput}
-        onChange={handleFileChange}
-        style={{ display: "none" }}
-      ></input>
-      <UploadList
-         fileList={fileList}
-         onRemove={removeFile}
-      />
+      <div
+        className="rock-upload-input"
+        style={{ display: "inline-block" }}
+        onClick={handleUpload}
+      >
+        {drag ? (
+          <Dragger
+            onFile={(files) => {
+              uploadFiles(files);
+            }}
+          >
+            {children}
+          </Dragger>
+        ) : (
+          children
+        )}
+        <input
+          type="file"
+          name="myFile"
+          ref={fileInput}
+          onChange={handleFileChange}
+          style={{ display: "none" }}
+          accept={accept}
+          multiple={multiple}
+        />
+      </div>
+      <UploadList fileList={fileList} onRemove={removeFile} />
     </div>
   );
 };
 
 Upload.defaultProps = {
-  // name: 'file'
+  name: "file",
+  // children: <span>Upload File</span>,
 };
 export default Upload;
