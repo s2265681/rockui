@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -1412,3 +1413,70 @@ main {
 
 .color-dark {
   background-color: #343a40; }
+
+.mask-li-style {
+  /* 禁止文字被鼠标选中 */
+  -moz-user-select: -moz-none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.mask-li-style.chooseSty {
+  /* 设置选中的样式 */
+  opacity: 0.3;
+  border: 1px dashed #999; }
+
+.show_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: move;
+  z-index: 1; }
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #ff0;
+  position: absolute; }
+
+.move-right {
+  cursor: ew-resize;
+  position: absolute;
+  background-color: #eae2e2;
+  height: 100px;
+  top: 0;
+  width: 20px;
+  font-size: 25px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: -20px; }
+
+.move-bottom {
+  cursor: ns-resize;
+  position: absolute;
+  background-color: #eae2e2;
+  font-size: 25px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  bottom: -20px; }
+
+.move-right-bottom {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  cursor: nwse-resize;
+  background-color: #eae2e2;
+  color: #fff;
+  bottom: -20px;
+  right: -20px; }

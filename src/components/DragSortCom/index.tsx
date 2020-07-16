@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Mask from "../Mask";
-import "./index.css";
 
 interface IProps {
   Data: any[];

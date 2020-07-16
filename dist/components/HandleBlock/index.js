@@ -11,7 +11,6 @@ var __assign = (this && this.__assign) || function () {
 };
 import React, { useState, useEffect } from "react";
 import Mask from "../Mask";
-import './index.css';
 var HandleBlock = function (props) {
     var onChange = props.onChange, blockInfo = props.blockInfo;
     var _a = useState(blockInfo ||

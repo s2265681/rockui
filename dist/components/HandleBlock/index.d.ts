@@ -1,5 +1,4 @@
 import React from "react";
-import './index.css';
 declare type blockObj = {
     width: number;
     height: number;

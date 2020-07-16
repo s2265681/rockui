@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Mask from "../Mask";
-import "./index.css";
 var DragSortCom = function (props) {
     var List = props.Data, index = props.index, setList = props.setList, lineHeight = props.lineHeight, children = props.children, onMouseUp = props.onMouseUp;
     var _a = useState(false), draging = _a[0], setDrag = _a[1];

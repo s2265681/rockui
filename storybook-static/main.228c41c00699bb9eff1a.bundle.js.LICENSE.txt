@@ -1,5 +1,0 @@
-/**
- * 
- * @param props 
- * @license https://fontawesome.com/icons?d=gallery
- */

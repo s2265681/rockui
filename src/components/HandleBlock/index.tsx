@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from "react";
 import Mask from "../Mask";
-import './index.css';
 
 type blockObj = {
   width:number;
