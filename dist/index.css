@@ -1271,3 +1271,144 @@ main {
 
 .commission-info .lengLine {
   border-left: #17a2b8 4px solid; }
+
+.rock-auto-complete {
+  position: relative; }
+
+.rock-suggestion-list {
+  list-style: none;
+  padding-left: 0;
+  white-space: nowrap;
+  position: absolute;
+  background: #fff;
+  z-index: 100;
+  top: calc(100% + 8px);
+  left: 0;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+  width: 100%; }
+  .rock-suggestion-list .suggstions-loading-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75px; }
+  .rock-suggestion-list .suggestion-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    color: #212529; }
+    .rock-suggestion-list .suggestion-item.is-active {
+      background: #0d6efd !important;
+      color: #fff !important; }
+    .rock-suggestion-list .suggestion-item:hover {
+      color: #0d6efd !important; }
+
+.rock-upload-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.rock-uploader-dragger {
+  background: #f8f9fa;
+  border: 1px dashed #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 20px;
+  width: 360px;
+  height: 180px;
+  text-align: center; }
+  .rock-uploader-dragger:hover {
+    border: 1px dashed #0d6efd; }
+  .rock-uploader-dragger.is-dragover {
+    border: 2px dashed #0d6efd;
+    background: rgba(13, 110, 253, 0.2); }
+
+.rock-upload-list-item {
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  min-width: 200px;
+  position: relative; }
+  .rock-upload-list-item:first-child {
+    margin-top: 10px; }
+  .rock-upload-list-item .file-name {
+    margin-left: 5px;
+    margin-right: 40px; }
+    .rock-upload-list-item .file-name svg {
+      margin-right: 5px;
+      color: #adb5bd; }
+  .rock-upload-list-item .file-name-error {
+    color: #dc3545; }
+    .rock-upload-list-item .file-name-error svg {
+      color: #dc3545; }
+  .rock-upload-list-item .file-status {
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    line-height: inherit; }
+  .rock-upload-list-item .file-actions {
+    display: none;
+    position: absolute;
+    right: 7px;
+    top: 0;
+    line-height: inherit;
+    cursor: pointer; }
+  .rock-upload-list-item:hover {
+    background-color: #e9ecef; }
+    .rock-upload-list-item:hover .file-status {
+      display: none; }
+    .rock-upload-list-item:hover .file-actions {
+      display: block; }
+
+.rock-progress-bar {
+  width: 100%;
+  box-sizing: border-box; }
+  .rock-progress-bar .rock-progress-bar-outer {
+    border-radius: 0.25rem;
+    background-color: #e9ecef;
+    overflow: hidden;
+    position: relative; }
+
+.rock-progress-bar-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  border-radius: 0.25rem;
+  line-height: 1;
+  transition: width 0.6s ease; }
+  .rock-progress-bar-inner .inner-text {
+    color: #fff;
+    font-size: 0.75rem;
+    margin: 0 5px; }
+
+.color-primary {
+  background-color: #0d6efd; }
+
+.color-secondary {
+  background-color: #6c757d; }
+
+.color-success {
+  background-color: #b7eb8f; }
+
+.color-info {
+  background-color: #17a2b8; }
+
+.color-warning {
+  background-color: #fadb14; }
+
+.color-danger {
+  background-color: #dc3545; }
+
+.color-light {
+  background-color: #f8f9fa; }
+
+.color-dark {
+  background-color: #343a40; }

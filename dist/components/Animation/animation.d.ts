@@ -18,7 +18,9 @@ interface AnimationProps extends App {
     changeChild?: boolean;
     /**className */
     className?: string | object;
+    /** intDir 动画进入的方向 */
     intDir?: "left" | "right" | "top" | "bottom";
+    /** intDir 动画离开的方向 */
     outDir?: "left" | "right" | "top" | "bottom";
 }
 /**
